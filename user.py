@@ -44,3 +44,13 @@ class UserManager:
 
     def list_users(self):
         return self.users
+
+    def find_user(self, username):
+        for user in self.users:
+            if user['username'] == username:
+                return user
+        return "해당 유저는 존재하지 않습니다!"
+
+    def reset_users(self):
+        self.users = []
+        self.save_users()
